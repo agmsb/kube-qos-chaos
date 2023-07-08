@@ -4,7 +4,7 @@ metadata:
   labels:
     app: requests
   name: requests
-  namespace: team-a
+  namespace: kube-qos-chaos
 spec:
   replicas: 5
   selector:
