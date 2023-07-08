@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: no-requests
+  name: no-requests
+  namespace: kube-qos-chaos
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: no-requests
+  template:
+    metadata:
+      labels:
+        app: no-requests
+    spec:
+      containers:
+      - image: progrium/stress
+        name: stress
+        command:
+        - /bin/sh
+        - -c
+        - stress --vm 1 --vm-bytes 1024M
