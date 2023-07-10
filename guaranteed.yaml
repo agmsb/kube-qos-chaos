@@ -6,7 +6,7 @@ metadata:
   name: requests
   namespace: kube-qos-chaos
 spec:
-  replicas: 5
+  replicas: 24
   selector:
     matchLabels:
       app: requests
@@ -20,11 +20,11 @@ spec:
         name: stress
         resources:
           requests:
-            cpu: 1
-            memory: 3Gi
+            cpu: 100m
+            memory: 1Gi
           limits:
-            cpu: 1
-            memory: 3Gi
+            cpu: 100m
+            memory: 1Gi
         command:
         - /bin/sh
         - -c
