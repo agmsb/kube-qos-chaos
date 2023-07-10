@@ -6,7 +6,7 @@ metadata:
   name: requests
   namespace: kube-qos-chaos
 spec:
-  replicas: 24
+  replicas: 27
   selector:
     matchLabels:
       app: requests
